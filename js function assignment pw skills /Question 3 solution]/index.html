@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IIFE Square Example</title>
+</head>
+<body>
+
+
+
+<h2>Square Using IIFE</h2>
+<p id="output"></p>
+
+<script>
+  // IIFE to calculate and display square of a number
+  (function(num) {
+    const result = num * num;
+    document.getElementById("output").textContent = `The square of ${num} is ${result}.`;
+  })(6); // You can change the number here
+
+
+  
+</script>
+
+</body>
+</html>

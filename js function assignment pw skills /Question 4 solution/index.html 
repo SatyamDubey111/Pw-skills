@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tax Calculator Using Closure</title>
+</head>
+<body>
+
+<h2>Tax Calculator</h2>
+<p id="tax1"></p>
+<p id="tax2"></p>
+<p id="tax3"></p>
+
+<script>
+  // Outer function returns a closure with tax calculation logic
+  function calculateTax() {
+    return function(income) {
+      let taxRate;
+
+      // Tax slab logic
+      if (income <= 250000) {
+        taxRate = 0; // No tax
+      } else if (income <= 500000) {
+        taxRate = 0.05; // 5%
+      } else if (income <= 1000000) {
+        taxRate = 0.2; // 20%
+      } else {
+        taxRate = 0.3; // 30%
+      }
+
+      return income * taxRate;
+    };
+  }
+
+  // Create a tax calculator using the closure
+  const taxCalculator = calculateTax();
+
+  // Test with different incomes
+  const tax1 = taxCalculator(200000);  // 0
+  const tax2 = taxCalculator(400000);  // 5% of 400000 = 20000
+  const tax3 = taxCalculator(1200000); // 30% of 1200000 = 360000
+
+  // Display results
+  document.getElementById("tax1").textContent = `Income: ₹200000 | Tax: ₹${tax1}`;
+  document.getElementById("tax2").textContent = `Income: ₹400000 | Tax: ₹${tax2}`;
+  document.getElementById("tax3").textContent = `Income: ₹1200000 | Tax: ₹${tax3}`;
+</script>
+
+</body>
+</html>

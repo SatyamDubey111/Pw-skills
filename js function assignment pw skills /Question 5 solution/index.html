@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Recursive Factorial Function</title>
+</head>
+<body>
+
+<h2>Factorial Calculator (Recursive)</h2>
+<p id="output1"></p>
+<p id="output2"></p>
+<p id="output3"></p>
+
+<script>
+  // Recursive factorial function
+  function factorial(n) {
+    if (n < 0) {
+      return "Invalid input! Factorial is not defined for negative numbers.";
+    }
+    if (n === 0 || n === 1) {
+      return 1;
+    }
+    return n * factorial(n - 1);
+  }
+
+  // Testing the function with different inputs
+  const result1 = factorial(0);   // 1
+  const result2 = factorial(5);   // 120
+  const result3 = factorial(7);   // 5040
+
+  // Displaying the results
+  document.getElementById("output1").textContent = `Factorial of 0 is ${result1}`;
+  document.getElementById("output2").textContent = `Factorial of 5 is ${result2}`;
+  document.getElementById("output3").textContent = `Factorial of 7 is ${result3}`;
+</script>
+
+</body>
+</html>
