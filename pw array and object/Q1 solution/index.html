@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shopping Cart</title>
+</head>
+<body>
+  <h1>Check the consoleeeeee</h1>
+
+  <script>
+    const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey'];
+
+    if (!shoppingCart.includes('Meat')) {
+      shoppingCart.unshift('Meat');
+    }
+
+    if (!shoppingCart.includes('Sugar')) {
+      shoppingCart.push('Sugar');
+    }
+
+    const isAllergicToHoney = true;
+    if (isAllergicToHoney && shoppingCart.includes('Honey')) {
+      const honeyIndex = shoppingCart.indexOf('Honey');
+      shoppingCart.splice(honeyIndex, 1);
+    }
+
+    const teaIndex = shoppingCart.indexOf('Tea');
+    if (teaIndex !== -1) {
+      shoppingCart[teaIndex] = 'Green Tea';
+    }
+
+    console.log("Updated Shopping Cart:", shoppingCart);
+  </script>
+</body>
+</html>

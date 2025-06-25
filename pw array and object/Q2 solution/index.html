@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Ages Analysis</title>
+</head>
+<body>
+  <h1>console for age analysis output</h1>
+
+
+
+
+
+  <script>
+    const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24];
+
+    // 1. Sort the array
+    const sortedAges = ages.slice().sort((a, b) => a - b);
+    console.log("Sorted Ages:", sortedAges);
+
+    // 2. Min and Max Age
+    const minAge = sortedAges[0];
+    const maxAge = sortedAges[sortedAges.length - 1];
+    console.log("Min Age:", minAge);
+    console.log("Max Age:", maxAge);
+
+    // 3. Median Age
+    let medianAge;
+    const mid = Math.floor(sortedAges.length / 2);
+    if (sortedAges.length % 2 === 0) {
+      medianAge = (sortedAges[mid - 1] + sortedAges[mid]) / 2;
+    } else {
+      medianAge = sortedAges[mid];
+    }
+    console.log("Median Age:", medianAge);
+
+    // 4. Average Age
+    const total = sortedAges.reduce((sum, age) => sum + age, 0);
+    const averageAge = total / sortedAges.length;
+    console.log("Average Age:", averageAge);
+
+    // 5. Age Range
+    const ageRange = maxAge - minAge;
+    console.log("Age Range:", ageRange);
+
+    // 6. Compare (min - average) and (max - average)
+    const minDiff = Math.abs(minAge - averageAge);
+    const maxDiff = Math.abs(maxAge - averageAge);
+    console.log("|Min - Avg| =", minDiff);
+    console.log("|Max - Avg| =", maxDiff);
+
+    if (minDiff > maxDiff) {
+      console.log("Min age is farther from the average than max age.");
+    } else if (maxDiff > minDiff) {
+      console.log("Max age is farther from the average than min age.");
+    } else {
+      console.log("Both min and max ages are equally distant from the average.");
+    }
+
+
+
+</script>
+</body>
+</html>

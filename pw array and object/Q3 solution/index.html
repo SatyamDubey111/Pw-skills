@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> jo jo jo</title>
+</head>
+<body>
+  <h1>Check the console for object extensibility and sealing status</h1>
+
+  <script>
+    // a) Prevent extensions to student object
+    const student = {
+      name: "John",
+      age: 21,
+      course: "MCA"
+    };
+    Object.preventExtensions(student);
+
+    // b) Check if student object is extensible
+    const extensibleStatus = Object.isExtensible(student);
+
+    // c) Create teacher object
+    const teacher = {
+      subject: "Math"
+    };
+
+    // d) Seal the teacher object
+    Object.seal(teacher);
+
+    // e) Check if teacher object is sealed
+    const sealedStatus = Object.isSealed(teacher);
+
+    // f) Print both statuses
+    console.log("Is student object extensible? =>", extensibleStatus);
+    console.log("Is teacher object sealed? =>", sealedStatus);
+  </script>
+</body>
+</html>
