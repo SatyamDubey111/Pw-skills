@@ -1,0 +1,41 @@
+body a {
+    color: red;
+  }
+  
+  body > h2:first-of-type {
+    color: white;
+    background-color: black;
+  }
+  
+  body p:first-of-type {
+    color: red;
+  }
+  
+  a[href] {
+    color: red;
+    text-decoration: none;
+  }
+  
+  a[class="active"] {
+    color: blue;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+  
+  a[target="_self"] {
+    background-color: yellow;
+  }
+  
+  p:last-of-type::after {
+    content: "...";
+  }
+  
+  li::marker {
+    color: red;
+  }
+  
+  p:nth-of-type(2)::first-letter {
+    color: red;
+    font-size: 30px;
+  }
+  

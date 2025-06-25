@@ -1,0 +1,10 @@
+.tagged::before {
+    content: "Hello - ";
+    color: green;
+  }
+  
+  .tagged::after {
+    content: " - Goodbye";
+    color: blue;
+  }
+  
